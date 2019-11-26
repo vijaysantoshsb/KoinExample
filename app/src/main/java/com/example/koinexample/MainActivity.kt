@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.koinexample.viewmodels.LoginViewmodel
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.lang.System.getProperty
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         Log.i("mainactivity", "oncreate")
         val viewmodelData = viewmodel.getLoginDetails()
         Log.i("mainactivity", viewmodelData)
+
+        val stagingUrl: String? = getProperty("staging_url")
+
     }
 
     override fun onStart() {
@@ -24,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("mainactivity", "stop")
+        Log.i("mainactivity", "onDestroy")
     }
 
     override fun onPause() {
