@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         val viewmodelData = viewmodel.getLoginDetails()
         Log.i("mainactivity", viewmodelData)
 
+        // we are getting that staging_url value from AppApplication claas setProperty method
         val stagingUrl: String? = getProperty("staging_url")
 
     }
